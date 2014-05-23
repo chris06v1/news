@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(published: true)
+    @posts = Post.where(state: "published")
     @posts.sort!{ |x, y| x.created_at <=> y.created_at }
   end
 

@@ -28,3 +28,9 @@ gem 'mysql2'
 gem 'authlogic'
 gem 'annotate'
 gem 'faker'
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem "factory_girl_rails"
+end
