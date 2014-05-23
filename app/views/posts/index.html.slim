@@ -1,0 +1,15 @@
+h1 Published Posts
+
+hr
+  = link_to "New Post", new_post_path
+hr
+
+
+- if @posts.present?
+  ul
+    - @posts.each do |post|
+      li = link_to post.title, post.url
+      - if post.body.present?
+        = post.body
+- else
+  p There are no posts.

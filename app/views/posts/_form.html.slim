@@ -1,0 +1,21 @@
+= form_for @post do |f|
+
+  - if @post.errors.any?
+    ul
+      - @post.errors.full_messages.each do |msg|
+        li = msg
+
+  p
+    = f.label :title, I18n.t("views.posts.title")
+    br
+    = f.text_field :title
+  p
+    = f.label :url, I18n.t("views.posts.url")
+    br
+    = f.text_field :url
+  p
+    = f.label :body, I18n.t("views.posts.body")
+    br
+    = f.text_area :body, { cols: "90", rows: "10" }
+  p
+    = f.submit I18n.t("views.posts.submit")

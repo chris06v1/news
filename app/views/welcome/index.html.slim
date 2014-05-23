@@ -1,0 +1,44 @@
+h2 Welcome
+p This is our interview assignment, we know your time is valuable so we've kept it short.
+   Please complete the assignment, create a branch, push to Github and create a pull-request for your code. You have complete freedom to do what you please with the codebase/gems/migrations/etc.
+
+h3 Tasks you should complete:
+
+p 1. Add authentication and basic access level control to the application.
+ul
+  li There should be a user and an admin account
+  li User is able to create posts
+  li In addition Admin is *also* able to delete posts and edit user's profiles
+
+p 2. Posts created should belong to the currently logged in user
+ul
+ li As a logged in user I'd like to see a list of all my posts (published and unpublished)
+
+p 3. Add voting functionality
+ul
+  li User is able to up-vote *other* people's posts but not down-vote
+  li Admin is able to up-vote and down-vote
+  li The posts index view should display posts order by both when they were created and how many up-votes they have.
+
+p 4. Identify and implement performance enhancements
+ul
+  li The Posts index view is very inefficient and will not scale very well.  There are several things that you can do both within the app and at the database level to make it more efficient.  Please fix it to be as efficient as possilbe.
+  li A couple things to consider: caching, migrations, query optimizatons...
+
+h3 Things to keep in mind:
+p The purpose of this app is to gauge your ability to:
+ul
+  li Problem solve and think critically
+  li Follow directions while making educated decisions on your own
+  li Implement a solution using Ruby on Rails that you're proud of
+  li Program efficiently, ideally you'd spend less than 4 hours on the assignment
+
+h3 Bonus
+ul
+  li Write specs for a model/controller that you feel should have them
+  li Show us your JS skills in a creative and benefitial feature
+  li Feel free to add/use anything else you think would highlight your recent skills
+  li Please note this app/code is yours to keep.
+
+br
+p = link_to "Go to the app", posts_path
