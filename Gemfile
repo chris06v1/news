@@ -28,6 +28,9 @@ gem 'mysql2'
 gem 'authlogic'
 gem 'annotate'
 gem 'faker'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'protected_attributes'
+gem 'will_paginate'
 
 group :test do
   gem 'rspec'

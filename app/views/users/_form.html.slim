@@ -1,0 +1,25 @@
+= form_for @user do |f|
+
+  - if @user.errors.any?
+    ul
+      - @user.errors.full_messages.each do |msg|
+        li = msg
+
+  p
+    = f.label :name, I18n.t("views.users.name")
+    br
+    = f.text_field :name
+  p
+    = f.label :email, I18n.t("views.users.email")
+    br
+    = f.text_field :email
+  p
+    = f.label :password, I18n.t("views.users.password")
+    br
+    = f.password_field :password
+  p
+    = f.label :password_confirmation, I18n.t("views.users.password_confirmation")
+    br
+    = f.password_field :password_confirmation
+  p
+    = f.submit I18n.t("views.posts.submit")

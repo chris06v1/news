@@ -13,6 +13,14 @@
 #
 
 class Post < ActiveRecord::Base
+
+  belongs_to :user
+
+  has_many :up_votes
+  has_many :down_votes
+
   validates :title, presence: true
   validates :url, presence: true
+
+  attr_accessible :title, :url, :body
 end

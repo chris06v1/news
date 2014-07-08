@@ -25,10 +25,19 @@ en:
       create:
         success: "Post successfully create"
         failure: "Something went wrong"
+    users:
+      create:
+        success: "Signed up successfully"
 
   views:
     posts:
       title: "Title (required)"
       url: "URL (required)"
       body: "Body"
+      submit: "Submit"
+    users:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Re-enter Password"
       submit: "Submit"
