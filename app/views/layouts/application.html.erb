@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
 
 <%= yield %>
+
+<%= link_to 'Log Out', log_out_path, :method => :post %>
 
 </body>
 </html>

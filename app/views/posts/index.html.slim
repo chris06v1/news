@@ -3,13 +3,27 @@ h1 Published Posts
 hr
   = link_to "New Post", new_post_path
 hr
+  h4 
+    = 'My Posts: '
+    = link_to 'Published', my_posts_path
+    = ' / '
+    = link_to 'Unpublished', my_posts_path(:state => 'unpublished')
 
 
 - if @posts.present?
   ul
     - @posts.each do |post|
-      li = link_to post.title, post.url
+      li 
+        = link_to "#{post.title} +#{post.up_votes_count} -#{post.down_votes_count}", post.url
+        - if current_user.admin?
+          = link_to '(delete)', post_path(post), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this post?'}
       - if post.body.present?
         = post.body
+      = link_to 'Up', up_vote_post_path(post), :method => :post
+      - if current_user.admin?
+        = '/'
+        = link_to 'Down', down_vote_post_path(post), :method => :post
 - else
   p There are no posts.
+
+= will_paginate @posts
