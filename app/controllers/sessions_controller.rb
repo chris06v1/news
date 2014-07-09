@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  def create
+def create
   user = User.find_by_email(params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 end
 
 def log_out
-  session[:user_id] = nil
+  reset_session
   redirect_to log_in_path, :notice => "Logged out!"
 end
 

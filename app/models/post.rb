@@ -23,4 +23,7 @@ class Post < ActiveRecord::Base
   validates :url, presence: true
 
   attr_accessible :title, :url, :body
+
+  # scopes
+  def self.state(state = 'published'); where(:state => state).order(:created_at) end
 end

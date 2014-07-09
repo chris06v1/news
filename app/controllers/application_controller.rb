@@ -2,14 +2,13 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  after_filter :reset_flash
 
   def logout_required
     redirect_to posts_path if logged_in?
   end
 
   def login_required
-    redirect_to new_user_path, :notice => 'You must sign in first' if !logged_in?
+    redirect_to new_user_path, :notice => 'You must sign in first' unless logged_in?
   end
 
   def admin_required
@@ -18,10 +17,6 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user
-  end
-
-  def reset_flash
-    flash = {}
   end
 
   private

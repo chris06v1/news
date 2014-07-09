@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
     if @user.errors.any?
-      flash[:notice] = "#{@user.errors.full_messages.first}"
+      flash[:notice] = @user.errors.full_messages.first
     else
       redirect_to posts_path, :notice => "User Updated sucessfully"
     end

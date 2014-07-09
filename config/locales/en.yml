@@ -23,7 +23,7 @@ en:
   controllers:
     posts:
       create:
-        success: "Post successfully create"
+        success: "Post successfully created"
         failure: "Something went wrong"
     users:
       create:
